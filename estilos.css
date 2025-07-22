@@ -12,7 +12,7 @@ body {
   color: #4a004a;
   min-height: 100vh;
 
-  /* Centrar vertical y horizontalmente */
+  /* Centrar header */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,22 +30,49 @@ header h1 {
   text-shadow: 1px 1px 4px #9a0954;
 }
 
-/* Contenedor semestre */
+/* Contenedor malla: fila horizontal con scroll */
+#malla {
+  display: flex;
+  flex-direction: row; /* filas lado a lado */
+  gap: 20px;           /* espacio entre semestres */
+  overflow-x: auto;    /* scroll horizontal */
+  padding-bottom: 10px;
+  width: 100%;
+  max-width: 100vw;    /* que no crezca más que ventana */
+  scrollbar-width: thin; /* Firefox */
+}
+
+/* Para que scrollbar sea visible y estilizado en Chrome */
+#malla::-webkit-scrollbar {
+  height: 10px;
+}
+#malla::-webkit-scrollbar-thumb {
+  background: #d6336c;
+  border-radius: 10px;
+}
+#malla::-webkit-scrollbar-track {
+  background: #ffd6e8;
+  border-radius: 10px;
+}
+
+/* Cada semestre vertical */
 .semestre {
   background: #ffc9de;
   border-radius: 16px;
   padding: 20px;
-  margin-bottom: 20px;
   box-shadow: 0 8px 12px rgba(214, 51, 108, 0.3);
   transition: background-color 0.3s ease;
 
-  /* Vertical */
+  /* vertical */
   display: flex;
   flex-direction: column;
   gap: 12px;
 
-  width: 100%;
-  max-width: 400px;
+  /* ancho fijo para que se apilen como columnas */
+  min-width: 280px;
+  max-width: 320px;
+  height: auto;
+  flex-shrink: 0; /* evita que se achiquen */
 }
 
 /* Título semestre */
@@ -55,6 +82,7 @@ header h1 {
   margin-bottom: 12px;
   font-size: 1.6rem;
   letter-spacing: 1.5px;
+  text-align: center;
 }
 
 /* Asignaturas */
@@ -106,3 +134,4 @@ header h1 {
   box-shadow: 0 0 12px #9a04a8;
   cursor: default;
 }
+
