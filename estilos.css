@@ -1,0 +1,108 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #fff0f6;
+  padding: 30px;
+  color: #4a004a;
+  min-height: 100vh;
+
+  /* Centrar vertical y horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #d6336c;
+  text-shadow: 1px 1px 4px #9a0954;
+}
+
+/* Contenedor semestre */
+.semestre {
+  background: #ffc9de;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 12px rgba(214, 51, 108, 0.3);
+  transition: background-color 0.3s ease;
+
+  /* Vertical */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Título semestre */
+.semestre h2 {
+  color: #9a0954;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+  letter-spacing: 1.5px;
+}
+
+/* Asignaturas */
+.curso {
+  background: #f8bbd0;
+  color: #660066;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 0;
+  display: block;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(102, 0, 102, 0.3);
+  transition: all 0.3s ease;
+  width: 100%;
+  user-select: none;
+  position: relative;
+  min-width: 0;
+  text-align: center;
+}
+
+.curso:hover {
+  background: #e85c9b;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(232, 92, 155, 0.6);
+}
+
+/* Desbloqueado */
+.curso.desbloqueado {
+  background: #ffaad4;
+  color: #730073;
+  box-shadow: 0 4px 8px rgba(115, 0, 115, 0.4);
+}
+
+/* Bloqueado */
+.curso.bloqueado {
+  background: #ffd6e8;
+  color: #b07a9e;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+/* Aprobado */
+.curso.aprobado {
+  background: #6a0080;
+  color: #ddd;
+  text-decoration: line-through;
+  box-shadow: 0 0 12px #9a04a8;
+  cursor: default;
+}
